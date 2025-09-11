@@ -1,4 +1,4 @@
-package com.example.cryptocurrencycompose.core.util
+package com.example.cryptocurrencycompose.core.domain.util
 
 typealias DomainError = Error
 

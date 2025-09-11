@@ -1,4 +1,4 @@
-package com.example.cryptocurrencycompose.presentation.coin_list
+package com.example.cryptocurrencycompose.crypto.presentation.coin_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,9 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.cryptocurrencycompose.domain.model.Coin
-import com.example.cryptocurrencycompose.presentation.model.CoinUi
-import com.example.cryptocurrencycompose.presentation.model.toCoinUi
+import com.example.cryptocurrencycompose.crypto.model.Coin
+import com.example.cryptocurrencycompose.crypto.presentation.model.CoinUi
+import com.example.cryptocurrencycompose.crypto.presentation.model.toCoinUi
 import com.example.cryptocurrencycompose.ui.theme.CryptoCurrencyComposeTheme
 
 @Composable

@@ -1,7 +1,7 @@
-package com.example.cryptocurrencycompose.presentation.coin_list
+package com.example.cryptocurrencycompose.crypto.presentation.coin_list
 
 import androidx.compose.runtime.Immutable
-import com.example.cryptocurrencycompose.presentation.model.CoinUi
+import com.example.cryptocurrencycompose.crypto.presentation.model.CoinUi
 
 
 @Immutable

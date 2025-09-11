@@ -1,4 +1,4 @@
-package com.example.cryptocurrencycompose.core.util
+package com.example.cryptocurrencycompose.core.presentation.util
 
 import com.example.cryptocurrencycompose.R
 

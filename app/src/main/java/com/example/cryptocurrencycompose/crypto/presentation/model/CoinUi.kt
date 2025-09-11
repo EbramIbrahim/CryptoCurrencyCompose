@@ -1,8 +1,8 @@
-package com.example.cryptocurrencycompose.presentation.model
+package com.example.cryptocurrencycompose.crypto.presentation.model
 
 import androidx.annotation.DrawableRes
-import com.example.cryptocurrencycompose.core.util.coinCodeToResource
-import com.example.cryptocurrencycompose.domain.model.Coin
+import com.example.cryptocurrencycompose.core.presentation.util.coinCodeToResource
+import com.example.cryptocurrencycompose.crypto.model.Coin
 import java.text.NumberFormat
 import java.util.Locale
 

@@ -1,4 +1,4 @@
-package com.example.cryptocurrencycompose.presentation.coin_list
+package com.example.cryptocurrencycompose.crypto.presentation.coin_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.cryptocurrencycompose.presentation.model.DisplayedNumber
+import com.example.cryptocurrencycompose.crypto.presentation.model.DisplayedNumber
 import com.example.cryptocurrencycompose.ui.theme.greenBackground
 
 @Composable
