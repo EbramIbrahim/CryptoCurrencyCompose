@@ -1,6 +1,9 @@
-package com.example.cryptocurrencycompose.crypto.model
+package com.example.cryptocurrencycompose.crypto.data.model
 
-data class Coin(
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class CoinDto(
     val id: String,
     val rank: String,
     val name: String,

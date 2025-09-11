@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.cryptocurrencycompose.crypto.model.Coin
+import com.example.cryptocurrencycompose.crypto.domain.model.Coin
 import com.example.cryptocurrencycompose.crypto.presentation.model.CoinUi
 import com.example.cryptocurrencycompose.crypto.presentation.model.toCoinUi
 import com.example.cryptocurrencycompose.ui.theme.CryptoCurrencyComposeTheme
