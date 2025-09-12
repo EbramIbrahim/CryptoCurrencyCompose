@@ -21,7 +21,8 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://api.coincap.io/v3/\"")
+            buildConfigField("String", "BASE_URL", "\"https://rest.coincap.io/v3/\"")
+            buildConfigField("String", "API_KEY", "\"2e1f90fffcdcb953bda95f8e0400776f4a3f88cfb53e5951693c56822792813b\"")
         }
         release {
             isMinifyEnabled = false
@@ -29,7 +30,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://api.coincap.io/v3/\"")
+            buildConfigField("String", "BASE_URL", "\"https://rest.coincap.io/v3/\"")
+            buildConfigField("String", "API_KEY", "\"2e1f90fffcdcb953bda95f8e0400776f4a3f88cfb53e5951693c56822792813b\"")
         }
     }
     compileOptions {
