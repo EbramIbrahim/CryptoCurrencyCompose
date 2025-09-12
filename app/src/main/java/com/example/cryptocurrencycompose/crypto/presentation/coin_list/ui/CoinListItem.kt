@@ -1,4 +1,4 @@
-package com.example.cryptocurrencycompose.crypto.presentation.coin_list
+package com.example.cryptocurrencycompose.crypto.presentation.coin_list.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
