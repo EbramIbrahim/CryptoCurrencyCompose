@@ -5,10 +5,16 @@ import androidx.lifecycle.viewModelScope
 import com.example.cryptocurrencycompose.core.domain.util.onError
 import com.example.cryptocurrencycompose.core.domain.util.onSuccess
 import com.example.cryptocurrencycompose.crypto.domain.data_source.CoinDataSource
+import com.example.cryptocurrencycompose.crypto.domain.model.Coin
 import com.example.cryptocurrencycompose.crypto.presentation.model.toCoinUi
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -25,6 +31,10 @@ class CoinListViewModel(
             started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5000L),
             initialValue = CoinListState()
         )
+
+    private val _errorChannel: Channel<CoinListEvent> = Channel()
+    val errorChannel = _errorChannel.receiveAsFlow()
+
 
     fun onAction(action: CoinListAction) {
         when (action) {
@@ -47,11 +57,8 @@ class CoinListViewModel(
                     }
                 }
                 .onError { error ->
-                    _coinsState.update {
-                        it.copy(
-                            isLoading = false,
-                        )
-                    }
+                    _coinsState.update { it.copy(isLoading = false) }
+                    _errorChannel.send(CoinListEvent.Error(error))
                 }
         }
     }
