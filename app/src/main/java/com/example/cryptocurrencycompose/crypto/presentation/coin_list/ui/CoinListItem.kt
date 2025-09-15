@@ -64,14 +64,14 @@ fun CoinListItem(
                 text = coinUi.symbol,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = contentColor
+                color = contentColor,
             )
 
             Text(
                 text = coinUi.name,
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Light,
-                color = contentColor
+                color = contentColor,
             )
         }
 

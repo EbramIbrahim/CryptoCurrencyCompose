@@ -59,7 +59,7 @@ fun ChangePercentItem(
         )
 
         Text(
-            text = "${changePercent.value} %",
+            text = "${changePercent.formattedValue} %",
             color = contentColor,
             fontSize = 14.sp,
             fontWeight = FontWeight.Medium
