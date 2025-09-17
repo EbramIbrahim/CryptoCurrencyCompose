@@ -42,7 +42,7 @@ fun CoinListItem(
 
     Row(
         modifier = modifier
-            .clickable { onClick }
+            .clickable { onClick() }
             .fillMaxWidth()
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,

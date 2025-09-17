@@ -8,7 +8,6 @@ import com.example.cryptocurrencycompose.crypto.domain.model.Coin
 import com.example.cryptocurrencycompose.crypto.domain.model.CoinPrice
 import java.time.Instant
 import java.time.ZoneId
-import java.time.ZonedDateTime
 
 fun CoinDto.toCoin(): Coin {
     return Coin(

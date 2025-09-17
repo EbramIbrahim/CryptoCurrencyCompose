@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.example.cryptocurrencycompose.crypto.presentation.coin_list.CoinListAction
 import com.example.cryptocurrencycompose.crypto.presentation.coin_list.CoinListState
 import com.example.cryptocurrencycompose.ui.theme.CryptoCurrencyComposeTheme
 
@@ -21,6 +22,7 @@ import com.example.cryptocurrencycompose.ui.theme.CryptoCurrencyComposeTheme
 @Composable
 fun CoinListScreen(
     state: CoinListState,
+    onAction: (CoinListAction) -> Unit
 ) {
 
     if (state.isLoading) {
@@ -38,7 +40,7 @@ fun CoinListScreen(
         items(state.coinList) { coin ->
             CoinListItem(
                 coinUi = coin,
-                onClick = {},
+                onClick = { onAction(CoinListAction.OnCoinClicked(coin)) },
                 modifier = Modifier.background(
                     MaterialTheme.colorScheme.background
                 )
@@ -51,7 +53,7 @@ fun CoinListScreen(
 @Preview
 @PreviewLightDark
 @Composable
-private fun CoinListScreenPreview () {
+private fun CoinListScreenPreview() {
     CryptoCurrencyComposeTheme {
         CoinListScreen(
             state = CoinListState(
@@ -59,7 +61,8 @@ private fun CoinListScreenPreview () {
                 coinList = (1..100).map {
                     previewCoin.copy(id = it.toString())
                 }
-            )
+            ),
+            onAction = {}
         )
     }
 }
