@@ -17,9 +17,9 @@ A modern **cryptocurrency tracker app** built with **Kotlin**, leveraging **Koin
 
 ## 📸 Screenshots  
 
- Adaptive Layout 
+ Adaptive Layouts
 |------------|---------------|----------------|
-| ![Phone](https://github.com/user-attachments/assets/6d942855-b6b8-4722-9a0b-30cc36492d38) | ![Foldable](https://github.com/user-attachments/assets/56967736-63aa-4380-a1db-1cfdfa70c90c) |
+![Phone](https://github.com/user-attachments/assets/6d942855-b6b8-4722-9a0b-30cc36492d38) | ![Foldable](https://github.com/user-attachments/assets/56967736-63aa-4380-a1db-1cfdfa70c90c) |
 
 ---
 
