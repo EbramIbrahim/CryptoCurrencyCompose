@@ -44,10 +44,6 @@ class CoinListViewModel(
             is CoinListAction.OnCoinClicked -> {
                 selectCoin(action.coinUi)
             }
-
-            CoinListAction.RefreshCoins -> {
-                loadCoins()
-            }
         }
     }
 
