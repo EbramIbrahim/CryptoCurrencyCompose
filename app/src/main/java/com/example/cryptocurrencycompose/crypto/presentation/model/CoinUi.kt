@@ -14,7 +14,8 @@ data class CoinUi(
     val marketCapUsd: DisplayedNumber,
     val priceUsd: DisplayedNumber,
     val changePercent24Hr: DisplayedNumber,
-    @DrawableRes val icon: Int
+    @DrawableRes val icon: Int,
+    val coinPriceHistory: List<DataPoint> = emptyList()
 )
 
 data class DisplayedNumber(

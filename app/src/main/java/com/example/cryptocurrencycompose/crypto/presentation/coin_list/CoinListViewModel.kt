@@ -8,6 +8,7 @@ import com.example.cryptocurrencycompose.core.domain.util.onError
 import com.example.cryptocurrencycompose.core.domain.util.onSuccess
 import com.example.cryptocurrencycompose.crypto.domain.data_source.CoinDataSource
 import com.example.cryptocurrencycompose.crypto.presentation.model.CoinUi
+import com.example.cryptocurrencycompose.crypto.presentation.model.DataPoint
 import com.example.cryptocurrencycompose.crypto.presentation.model.toCoinUi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,6 +19,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 class CoinListViewModel(
     private val coinDataSource: CoinDataSource
@@ -77,8 +79,25 @@ class CoinListViewModel(
                 coinId = coinUi.id,
                 start = ZonedDateTime.now().minusDays(5),
                 end = ZonedDateTime.now()
-            ).onSuccess { coinPrice ->
-                println(coinPrice.toString())
+            ).onSuccess { coinHistoryPrice ->
+                val dataPoints = coinHistoryPrice
+                    .sortedBy { it.dateTime }
+                    .map {
+                        DataPoint(
+                            x = it.dateTime.hour.toFloat(),
+                            y = it.priceUsd.toFloat(),
+                            xLabel = DateTimeFormatter
+                                .ofPattern("ha\nM/d")
+                                .format(it.dateTime)
+                        )
+                    }
+                _coinsState.update {
+                    it.copy(
+                        selectedCoin = it.selectedCoin?.copy(
+                            coinPriceHistory = dataPoints
+                        )
+                    )
+                }
             }.onError {
                 _errorChannel.send(CoinListEvent.Error(it))
             }
