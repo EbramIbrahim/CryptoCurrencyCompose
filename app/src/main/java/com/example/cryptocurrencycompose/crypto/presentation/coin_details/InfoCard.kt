@@ -106,6 +106,7 @@ fun InfoCard(
 
 
 @PreviewLightDark
+@Preview
 @Composable
 private fun InfoCardPrev() {
     CryptoCurrencyComposeTheme {
