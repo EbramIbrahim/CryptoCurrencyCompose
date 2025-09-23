@@ -38,5 +38,4 @@ A modern **cryptocurrency tracker app** built with **Kotlin**, leveraging **Koin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/CryptoCurrencyCompose.git
-   cd CryptoCurrencyCompose
+   git clone https://github.com/EbramIbrahim/AdaptiveCryptoCurrencyCompose.git
